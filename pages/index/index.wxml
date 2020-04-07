@@ -1,0 +1,12 @@
+<!-- 外部样式类l-class 还需要强调优先级 !important; -->
+<l-button l-class="btn" size="long" bind:lintap="onGetToken">获取Token</l-button>
+<l-button l-class="btn" size="long" bind:lintap="onVerifyToken">验证Token</l-button>
+
+<l-button l-class="btn" size="long" type="warning" bind:lintap="onGetLaTest">获取最新期刊</l-button>
+<l-button l-class="btn" size="long" type="warning" bind:lintap="onGetNext">获取下一期</l-button>
+<l-button l-class="btn" size="long" type="warning" bind:lintap="onGetLast">获取上一期</l-button>
+<l-button l-class="btn" size="long" type="warning" bind:lintap="onGetUserlike">获取当前用户对某一期刊的点赞情况</l-button>
+<l-button l-class="btn" size="long" type="warning" bind:lintap="onGetFavor">获取用户喜欢期刊列表</l-button>
+
+<l-button l-class="btn" size="long" type="error" bind:lintap="onLike">点赞</l-button>
+<l-button l-class="btn" size="long" type="error" bind:lintap="onDisLike">取消点赞</l-button>
