@@ -223,7 +223,7 @@ Page({
 
   onGetBookDetail() {
     wx.request({
-      url: 'http://localhost:3001/v1/book/1002/detail',
+      url: 'http://localhost:3001/v1/book/1120/detail',
       method: 'GET',
       header: {
         Authorization: this._encode()
