@@ -323,6 +323,35 @@ Page({
       }
     })
   },
+
+  onGetBookComment() {
+    wx.request({
+      url: 'http://localhost:3001/v1/book/1120/short_comment',
+      method: 'GET',
+      header: {
+        Authorization: this._encode()
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+      }
+    })
+  },
+
+  onBookHotKeyword() {
+    wx.request({
+      url: 'http://localhost:3001/v1/book/hot_keyword',
+      method: 'GET',
+      header: {
+        Authorization: this._encode()
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+      }
+    })
+  },
+
   _encode() {
     const token = wx.getStorageSync('token')
     const base64 = Base64.encode(token + ':')
