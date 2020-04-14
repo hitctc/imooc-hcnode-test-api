@@ -121,6 +121,24 @@ Page({
     })
   },
 
+  onGetLatestDesc() {
+    wx.request({
+      url: 'http://localhost:3001/v1/classic/100/1',
+      method: 'GET',
+      header: {
+        Authorization: this._encode()
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+        // const code = res.statusCode.toString()
+        // if (code.startsWith('2')) {
+        //   wx.setStorageSync('token', res.data.token)
+        // }
+      }
+    })
+  },
+
   onGetFavor() {
     wx.request({
       url: 'http://localhost:3001/v1/classic/favor',
@@ -185,6 +203,126 @@ Page({
     })
   },
 
+  onGetHotBookList() {
+    wx.request({
+      url: 'http://localhost:3001/v1/book/hot_book',
+      method: 'GET',
+      header: {
+        Authorization: this._encode()
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+        // const code = res.statusCode.toString()
+        // if (code.startsWith('2')) {
+        //   wx.setStorageSync('token', res.data.token)
+        // }
+      }
+    })
+  },
+
+  onGetBookDetail() {
+    wx.request({
+      url: 'http://localhost:3001/v1/book/1002/detail',
+      method: 'GET',
+      header: {
+        Authorization: this._encode()
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+        // const code = res.statusCode.toString()
+        // if (code.startsWith('2')) {
+        //   wx.setStorageSync('token', res.data.token)
+        // }
+      }
+    })
+  },
+
+  onGetBookSearch() {
+    wx.request({
+      url: 'http://localhost:3001/v1/book/search',
+      method: 'GET',
+      contentType: 'application/x-www-form-urlencoded:charset=UTF-8',
+      header: {
+        Authorization: this._encode()
+      },
+      data: {
+        q: '游戏',
+        // count: 5,
+        // start: 5
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+        // const code = res.statusCode.toString()
+        // if (code.startsWith('2')) {
+        //   wx.setStorageSync('token', res.data.token)
+        // }
+      }
+    })
+  },
+
+  onGetBookFavorCount() {
+    wx.request({
+      url: 'http://localhost:3001/v1/book/favor/count',
+      method: 'GET',
+      contentType: 'application/x-www-form-urlencoded:charset=UTF-8',
+      header: {
+        Authorization: this._encode()
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+        // const code = res.statusCode.toString()
+        // if (code.startsWith('2')) {
+        //   wx.setStorageSync('token', res.data.token)
+        // }
+      }
+    })
+  },
+
+  onGetMyBookFavor() {
+    wx.request({
+      url: 'http://localhost:3001/v1/book/1200/favor',
+      method: 'GET',
+      contentType: 'application/x-www-form-urlencoded:charset=UTF-8',
+      header: {
+        Authorization: this._encode()
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+        // const code = res.statusCode.toString()
+        // if (code.startsWith('2')) {
+        //   wx.setStorageSync('token', res.data.token)
+        // }
+      }
+    })
+  },
+
+  onAddComment() {
+    wx.request({
+      url: 'http://localhost:3001/v1/book/add/short_comment',
+      method: 'POST',
+      contentType: 'application/x-www-form-urlencoded:charset=UTF-8',
+      header: {
+        Authorization: this._encode()
+      },
+      data: {
+        content: "点赞点赞",
+        book_id: 1120
+      },
+      success: (res) => {
+        console.log(res)
+        console.log(res.data)
+        // const code = res.statusCode.toString()
+        // if (code.startsWith('2')) {
+        //   wx.setStorageSync('token', res.data.token)
+        // }
+      }
+    })
+  },
   _encode() {
     const token = wx.getStorageSync('token')
     const base64 = Base64.encode(token + ':')
